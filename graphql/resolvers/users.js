@@ -1,10 +1,13 @@
 const bcrypt = require('bcryptjs') //used for hashing or encrypting passwords 
 const jwt = require('jsonwebtoken')
-const {UserInputError} = require('apollo-server')//apollo's way of return errors I THINK
+const {UserInputError, AuthenticationError} = require('apollo-server')//apollo's way of return errors I THINK
+const { args } = require('commander');
 
 const {validateRegisterInput, validateLoginInput} = require('../../util/validators')
 const { SECRET_KEY } = require('../../config')
 const User  = require('../../models/User')
+const { getIntrospectionQuery } = require('graphql');
+const checkAuth = require('../../util/check-auth');
 
 //resolver for user accounts
 
@@ -18,7 +21,29 @@ function generateToken(user){
 }
 
 module.exports = {
+    Query:{
+        async getUser(_,{id}){
+            try{
+                const user = await User.findById(id)
+                if(user){
+                    return user
+                }else{
+                    throw new Error ('User not found')
+                }
+            } catch(error){
+                throw new Error(error)
+            }
+        }
+    },
     Mutation:{
+        async editBio(_, {bio}, context){
+            const user = checkAuth(context)
+            if(user){
+                return User.findByIdAndUpdate(user.id, {bio: bio}, {new:true})
+            }else{
+                throw new Error('Action not allowed')
+            }
+        },
         async login(_, {username, password}){
             //checks for input-side errors like empty inputs
             const {errors, valid} = validateLoginInput(username, password)

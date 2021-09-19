@@ -4,9 +4,11 @@ const postSchema = new Schema({
     username: String,
     createdAt: String,
     image: String,
-    likes: [
+    comments: [
         {
-            username: String
+            body: String,
+            username: String,
+            createdAt: String,
         }
     ],
     user: {

@@ -1,4 +1,5 @@
-const {AuthenticationError} = require('apollo-server')
+const {AuthenticationError} = require('apollo-server');
+const { args } = require('commander');
 
 const Post = require('../../models/Post');
 const checkAuth = require('../../util/check-auth')
@@ -28,8 +29,13 @@ module.exports = {
       },
       Mutation: {
         async createPost(_, { caption }, context){
-          const user = checkAuth(context)
-          const newPost = new Post({
+          const user = checkAuth(context) //authenticate user
+
+          if(args.body.trim() === ''){
+            throw new Error('Post body must not be empty')
+          }
+
+          const newPost = new Post({ 
             caption,
             user: user.id,
             username: user.username,
@@ -46,7 +52,7 @@ module.exports = {
           try{
             const post = await Post.findById(postId)
             if(user.username === post.username){
-              await post.delete()
+              await post.delete() 
               return 'Post deleted successfully'
             }else{
               throw new AuthenticationError('Action not allowed')
