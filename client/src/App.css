@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(44, 44, 44);
+    color: rgb(218, 218, 218);
+}
+.nav-container{
+    display: flex;
+    justify-content: center;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    padding: 3vh 0px 0px 0px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.062);
+    background-color: rgb(48, 48, 48);
+    height: 10vh;
+}
+
+@media screen and (min-width: 1025px) {
+    .nav {
+        width: 70%;
+        border: 2px solid rgba(255, 255, 255, 0.062);
+    }
+  }
+
+  a {
+    color: rgb(184, 184, 184);
+  }
+  a:hover {
+     color: rgb(255, 255, 255)
+  }
+
+  .active-icon{
+      color: rgb(255, 255, 255);
+  }
+
+  .inactive-icon{
+      color: rgb(133, 133, 133);
+  }

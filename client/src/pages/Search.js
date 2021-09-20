@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 
-function Home(){
+function Search(){
     return(
         <div>
-        <h2>Home Page</h2>
-        <Navbar/>
+        <h2>Search Page</h2>
+        <Navbar />
         </div>
     )
 }
-export default Home;
+export default Search;
