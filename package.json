@@ -15,7 +15,8 @@
     "bcryptjs": "^2.4.3",
     "graphql": "^15.5.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.5"
+    "mongoose": "^6.0.5",
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

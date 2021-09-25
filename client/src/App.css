@@ -1,43 +1,124 @@
 body{
-    background-color: rgb(44, 44, 44);
+    background-color: rgb(32, 32, 32);
     color: rgb(218, 218, 218);
 }
 .nav-container{
     display: flex;
     justify-content: center;
 }
-
 .nav{
     display: flex;
     justify-content: space-around;
     position:fixed;
+    z-index: 999;
     bottom:0;
     width: 100%;
-    padding: 3vh 0px 0px 0px;
-
-    border-top: 2px solid rgba(255, 255, 255, 0.062);
-    background-color: rgb(48, 48, 48);
-    height: 10vh;
+    padding: 1.75vh 0px 0px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.479);
+    background-color: rgb(27, 27, 27);
+    height: 7.5vh;
+    min-height: 35px;
+}
+.logo{
+    height: 35px;
+    width: 37px;
+    vertical-align: middle;
+    margin-left: 1.5vh;
 }
 
-@media screen and (min-width: 1025px) {
+.active-icon{
+    color: rgb(255, 255, 255);
+}
+.inactive-icon{
+    color: rgb(133, 133, 133);
+}
+a {
+    color: rgb(0, 0, 0);
+}
+a:hover {
+    color: rgb(255, 255, 255)
+}
+
+.headerbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    text-align: left;
+    font-size: 30px;
+    background-color:  rgb(27, 27, 27);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.397);
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.fake-headerbar{
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    background-color:  rgb(27, 27, 27);
+  
+    height: 7vh;
+    font-family: 'Dancing Script';
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.post-holder{
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+}
+.post{
+    background-color: rgb(255, 255, 255);
+    width: 325px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    padding-top:3px;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    
+    box-shadow: rgb(0, 0, 0) 10px 10px 3px;
+}
+.post-header{
+    font-size: 30px;
+    position: relative;
+    padding-top: 25px;
+    text-align: center;
+}
+.post-image{
+    width: 300px;
+    height: 300px;
+}
+.post-user{
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 12px;
+}
+@media screen and (min-width: 1024px) { /*if the screen width is greater than or equal to 1024, then do this*/
     .nav {
         width: 70%;
-        border: 2px solid rgba(255, 255, 255, 0.062);
+        border-right: 1px solid rgba(255, 255, 255, 0.479);
+        border-left: 1px solid rgba(255, 255, 255, 0.466);
     }
-  }
+}
+@media screen and (min-height: 1200px) { /*if the screen height is greater than or equal to 1200, then do this*/
+    .logo{
+        height: 50px;
+        width: 53px;
+        vertical-align: middle;
+        margin-left: 1.5vh;
+    }
+}
+@media screen and (max-height: 639px) { /*if the screen height is less than or equal to 639, then do this*/
+    .logo{
+        height: 20px;
+        width: 22px;
+        vertical-align: middle;
+        margin-left: 1.5vh;
+    }
+}
 
-  a {
-    color: rgb(184, 184, 184);
-  }
-  a:hover {
-     color: rgb(255, 255, 255)
-  }
 
-  .active-icon{
-      color: rgb(255, 255, 255);
-  }
-
-  .inactive-icon{
-      color: rgb(133, 133, 133);
-  }
