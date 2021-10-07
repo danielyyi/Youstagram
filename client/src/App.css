@@ -1,6 +1,7 @@
 body{
     background-color: rgb(32, 32, 32);
     color: rgb(218, 218, 218);
+    font-weight: 500;
 }
 .nav-container{
     display: flex;
@@ -66,8 +67,9 @@ a:hover {
 }
 .post-holder{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding-top: 12px;
+    padding-top: 15px;
 }
 .post{
     background-color: rgb(255, 255, 255);
@@ -79,13 +81,30 @@ a:hover {
     color: black;
     font-weight: bold;
     border-radius: 3px;
-    
-    box-shadow: rgb(0, 0, 0) 10px 10px 3px;
 }
-.post-header{
-    font-size: 30px;
+.fake-post{
+    background-color: #FFDF89;
+
+
+
+
+    width: 325px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    padding-top:3px;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.post-caption{
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
     position: relative;
-    padding-top: 25px;
+    padding: 15px 10px 15px 10px;
+    margin-top: 14px;
+    margin-right: 11px;
+    margin-left:11px;
     text-align: center;
 }
 .post-image{
@@ -93,9 +112,20 @@ a:hover {
     height: 300px;
 }
 .post-user{
-    text-align: right;
-    margin-right: 10px;
-    margin-top: 12px;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: rgb(180, 180, 180);
+}
+.post-date{
+    word-spacing: .1em;
+    letter-spacing: .03em;
+}
+.post-bottom-holder{
+    display: flex;
+    margin-top: 2px;
+} 
+.spacer{
+    margin-right: auto;
 }
 @media screen and (min-width: 1024px) { /*if the screen width is greater than or equal to 1024, then do this*/
     .nav {

@@ -1,6 +1,7 @@
 const postsResolvers = require('./posts')
 const usersResolvers = require('./users')
 const commentsResolvers = require('./comments')
+
 //imports our posts and users resolvers into one file so the main index.js file can easily access them
 module.exports = {
     Post:{
@@ -14,5 +15,5 @@ module.exports = {
         ...usersResolvers.Mutation,
         ...postsResolvers.Mutation,
         ...commentsResolvers.Mutation,
-    }
+    },
 }

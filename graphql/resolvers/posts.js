@@ -1,6 +1,7 @@
 const {AuthenticationError} = require('apollo-server');
 const { args } = require('commander');
 
+
 const Post = require('../../models/Post');
 const checkAuth = require('../../util/check-auth')
 
@@ -28,6 +29,7 @@ module.exports = {
         }
       },
       Mutation: {
+        
         async createPost(_, { caption }, context){
           const user = checkAuth(context) //authenticate user
 
