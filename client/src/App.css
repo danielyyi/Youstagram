@@ -110,6 +110,8 @@ a:hover {
 .post-image{
     width: 300px;
     height: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.178);
+    background-color: black;
 }
 .post-user{
     font-size: 18px;

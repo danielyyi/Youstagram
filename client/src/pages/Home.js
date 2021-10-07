@@ -39,6 +39,7 @@ const FETCH_POSTS_QUERY = gql`
     getPosts {
       id
       caption
+      imagePath
       createdAt
       username
       commentCount

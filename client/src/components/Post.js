@@ -4,7 +4,8 @@ import astro from "../astro.jpg";
 import moment from 'moment'
 import { Icon } from "semantic-ui-react";
 
-function Post({ post: { caption, createdAt, id, username, commentCount } }) {
+function Post({ post: { caption, imagePath, createdAt, id, username, commentCount } }) {
+  console.log(imagePath)
   return (
     <div>
 
@@ -14,7 +15,7 @@ function Post({ post: { caption, createdAt, id, username, commentCount } }) {
       </Link>
       <div className="post">
         <div style={{ display: "flex", justifyContent: "center", paddingTop: 10 }}>
-          <img className="post-image" src={astro} alt={"post"} />
+          <img className="post-image" src={imagePath} alt={"post"} />
         </div>
         <Link to="/postID">
           <div className="post-caption">{caption}</div>

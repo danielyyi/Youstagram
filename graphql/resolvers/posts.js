@@ -30,7 +30,7 @@ module.exports = {
       },
       Mutation: {
         
-        async createPost(_, { caption }, context){
+        async createPost(_, { caption, imagePath}, context){
           const user = checkAuth(context) //authenticate user
 
           if(caption.trim() === ''){
@@ -39,6 +39,7 @@ module.exports = {
 
           const newPost = new Post({ 
             caption,
+            imagePath,
             user: user.id,
             username: user.username,
             createdAt: new Date().toISOString()

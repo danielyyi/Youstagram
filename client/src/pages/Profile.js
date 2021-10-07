@@ -7,12 +7,12 @@ function Profile() {
     <div>
       <h2>Profile Page</h2>
 
-      <Link to="/login">
-        <div>Login</div>
-      </Link>
-      <Link to="/register">
-        <div>Register</div>
-      </Link>
+
+      <form action="/upload" method="POST" encType="multipart/form-data">
+        <input type="file" name="appImage" />
+        <button>Submit</button>
+    </form>
+
       <Navbar />
     </div>
   );
