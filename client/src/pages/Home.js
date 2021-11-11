@@ -10,7 +10,6 @@ function Home() {
     const {loading, data} = useQuery(FETCH_POSTS_QUERY);
     var posts = {};
     if(!loading){
-        console.log(data)
         posts = data.getPosts
     }
       
@@ -18,6 +17,7 @@ function Home() {
     <div>
       <Headerbar />
       <div className="fake-headerbar"></div>
+      <div className="current-posts">
       {loading ? (
         <h3>Loading...</h3>
       ) : (
@@ -28,8 +28,8 @@ function Home() {
           </div>
         ))
       )}
-      
-      <div style={{ height: 75 }}></div>
+      </div>
+      <div style={{ height: 60 }}></div>
       <Navbar />
     </div>
   );

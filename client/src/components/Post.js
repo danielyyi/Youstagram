@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import astro from "../astro.jpg";
+//import astro from "../astro.jpg";
 import moment from 'moment'
-import { Icon } from "semantic-ui-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComments } from "@fortawesome/free-solid-svg-icons";
+
 
 function Post({ post: { caption, imagePath, createdAt, id, username, commentCount } }) {
-  console.log(imagePath)
   return (
     <div>
 
@@ -23,9 +24,9 @@ function Post({ post: { caption, imagePath, createdAt, id, username, commentCoun
       </div>
 
       <div className="post-bottom-holder">
-        <div className="post-date">{moment(createdAt).format('MMMM Do, YYYY')} ({moment(createdAt).fromNow(true)})</div>
+        <div className="post-date">{moment(createdAt).format('MMMM Do, YYYY')} ({moment(createdAt).fromNow()})</div>
         <div className="spacer"></div>  
-        <div className="comment-icon">{commentCount} <Icon name="comment outline" /></div>
+        <div className="comment-icon">{commentCount} <FontAwesomeIcon icon={faComments}/></div>
     </div>
 
 

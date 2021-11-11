@@ -28,7 +28,7 @@ async function startServer(){
     .then(() => {
       console.log("MongoDB Connected");
       return app.listen({ port: 5000 }, ()=>{
-        console.log('Server ready at locahost:5000')
+        console.log('Server ready at locahost:5000/graphql')
       });
     })
   }

@@ -1,35 +1,88 @@
-import React, { useState} from 'react'
-import {Icon} from 'semantic-ui-react'
-import {Link} from 'react-router-dom'
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
+
+import {AuthContext} from '../context/auth'
 
 function Navbar() {
-  const pathname = window.location.pathname //name of page aka /login etc.
-  const path = pathname === '/' ? 'home' : pathname === '/search' ? 'search' : pathname === '/profile' ? 'user' : pathname.substr(1)
+  const {user, logout} = useContext(AuthContext);
+  const pathname = window.location.pathname; //name of page aka /login etc.
+  const path = pathname === "/" ? "home" : pathname.substr(1);
 
-  const [activeItem, setActiveItem] = useState(path)
-  const handleItemClick = (e, { name }) => setActiveItem(name)
- 
-  
-    return (
-        <div className='nav-container'>
-            <div className="nav">
-            <Link to="/">
-                <div><Icon name='home' size='big' className={activeItem === 'home' ? "active-icon" : "inactive-icon"} onClick = {handleItemClick}/></div>
-            </Link> 
-            <Link to="/search">
-                <div><Icon name='search' size='big' className={activeItem === 'search' ? "active-icon" : "inactive-icon"} 
-                onClick = {handleItemClick}/></div>
-            </Link> 
-            <Link to="/profile">
-                <div><Icon name='user' size='big' className={activeItem === 'user' ? "active-icon" : "inactive-icon"} 
-                onClick = {handleItemClick}/></div>
-            </Link>   
-            </div>
-        </div>
-    )
-  }
+  const [activeItem] = useState(path);
 
+  const navbar = user ? (
+    <div className="nav-container">
+    <div className="nav">
+      
+      <Link to="/search">
+        <FontAwesomeIcon
+          name="search"
+          className={
+            activeItem === "search" ? "active-icon" : "inactive-icon"
+          }
+          size="lg"
+          icon={faSearch}
+        />
+      </Link>
+      <Link to="/">
+        <FontAwesomeIcon
+          name="home"
+          className={activeItem === "home" ? "active-icon" : "inactive-icon"}
+          size="lg"
+          icon={faHome}
+        />
+      </Link>
+      <Link to="/profile">
+        <FontAwesomeIcon
+          name="profile"
+          className={
+            activeItem === "profile" ? "active-icon" : "inactive-icon"
+          }
+          size="lg"
+          icon={faUser}
+        />
+      </Link>
+    </div>
+  </div>
+  ) : (
+    <div className="nav-container">
+    <div className="nav">
+      
+      <Link to="/search">
+        <FontAwesomeIcon
+          name="search"
+          className={
+            activeItem === "search" ? "active-icon" : "inactive-icon"
+          }
+          size="lg"
+          icon={faSearch}
+        />
+      </Link>
+      <Link to="/">
+        <FontAwesomeIcon
+          name="home"
+          className={activeItem === "home" ? "active-icon" : "inactive-icon"}
+          size="lg"
+          icon={faHome}
+        />
+      </Link>
+      <Link to="/noprofile">
+        <FontAwesomeIcon
+          name="noprofile"
+          className={
+            activeItem === "noprofile" ? "active-icon" : "inactive-icon"
+          }
+          size="lg"
+          icon={faUser}
+        />
+      </Link>
+    </div>
+  </div>
+  )
 
-export default Navbar
+  return navbar;
+}
 
-
+export default Navbar;
