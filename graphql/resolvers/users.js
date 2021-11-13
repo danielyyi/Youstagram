@@ -17,6 +17,7 @@ function generateToken(user){
         id: user.id,
         email: user.email,
         username: user.username,
+        bio: user.bio
     }, SECRET_KEY, {expiresIn: '1h'})
 }
 
@@ -103,7 +104,7 @@ module.exports = {
                 email, 
                 username, 
                 password,
-                createdAt: new Date().toISOString()
+                createdAt: new Date().toISOString(),
             })
 
             const res = await newUser.save()

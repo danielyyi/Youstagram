@@ -105,6 +105,7 @@ const REGISTER_USER = gql`
       username
       createdAt
       token
+      bio
     }
   }
 `;

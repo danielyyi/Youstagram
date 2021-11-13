@@ -63,9 +63,7 @@ a {
   text-align: left;
   font-size: 30px;
   background-color: rgb(27, 27, 27);
-
   height: 7vh;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -151,6 +149,103 @@ a {
 .login:hover {
     background-color:#ff9c3e;
   }
+
+  .profile-headerbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    text-align: left;
+    font-size: 30px;
+    background-color: rgb(27, 27, 27);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.397);
+    height: 20vh;
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+  }
+  .fake-profile-headerbar {
+    width: 100%;
+    text-align: left;
+    font-size: 30px;
+    background-color: rgb(27, 27, 27);
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .profile-header-info{
+    display: flex;
+    margin:15px 15px 20px 15px;
+    height: 10vh;
+  }
+  .profile-name-bio{
+    display: flex;
+    flex-direction: column;
+  }
+  .pfp {
+    height: 60px;
+    width: 60px;
+    margin-left: auto;
+  }
+  .profile-name{
+    font-size: 27px;
+  }
+  .profile-bio{
+    max-width: 75%;
+    font-size: 15px;
+    margin-left: 1px;
+  }
+  .profile-header-buttons{
+    padding: 0px 10px 10px 10px;
+    display: flex;
+  }
+  .post-button {
+    background-color:transparent;
+    border-radius:6px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    color:#ffffff;
+    font-size:15px;
+    padding:7px 10px;
+    text-decoration:none;
+  }
+  .edit-profile-button {
+    background-color:transparent;
+    border-radius:6px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    color:#ffffff;
+    font-size:15px;
+    padding:1px 30px;
+    text-decoration:none;
+  }
+  .dots-button {
+    background-color:transparent;
+    border-radius:6px;
+    border:2px solid #ffffff;
+    display:inline-block;
+    color:#ffffff;
+    font-size:15px;
+    padding:1px 5px;
+    text-decoration:none;
+  }
+  .header-right{
+    margin-left: auto;
+    margin-top:auto;
+  }
+  .dots-button:active {
+    position:relative;
+    top:1px;
+  }
+  .edit-profile-button:active {
+    position:relative;
+    top:1px;
+  }
+  .post-button:active {
+    position:relative;
+    top:1px;
+  }
+  
 
 @media screen and (min-width: 1024px) {
   /*if the screen width is greater than or equal to 1024, then do this*/
