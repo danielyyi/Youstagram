@@ -18,9 +18,7 @@ function Post({ post: { caption, imagePath, createdAt, id, username, commentCoun
         <div style={{ display: "flex", justifyContent: "center", paddingTop: 10 }}>
           <img className="post-image" src={imagePath} alt={"post"} />
         </div>
-        <Link to="/postID">
           <div className="post-caption">{caption}</div>
-        </Link>
       </div>
 
       <div className="post-bottom-holder">

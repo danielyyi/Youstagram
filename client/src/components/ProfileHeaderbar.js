@@ -8,6 +8,8 @@ import {
   faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { Link } from "react-router-dom";
+
 function ProfileHeaderbar() {
   const { user, logout } = useContext(AuthContext);
   return (
@@ -20,10 +22,12 @@ function ProfileHeaderbar() {
         <img className="pfp" src={pfp} alt={"logo"} />
       </div>
       <div className="profile-header-buttons">
-        <button className="post-button">Post +</button>
+        <Link to="/createpost">
+          <button className="post-button">Post +</button>
+        </Link>
         <div className="header-right">
-        <button className="edit-profile-button">Edit Profile</button>
-        <button className="dots-button">···</button>
+          <button className="edit-profile-button">Edit Profile</button>
+          <button className="dots-button">···</button>
         </div>
       </div>
     </div>

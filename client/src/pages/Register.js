@@ -41,7 +41,7 @@ function Register(props) {
           placeholder="Username..."
           name="username"
           value={values.username}
-          
+          className="temp-input"
           onChange={onChange}
         />
         <input
@@ -49,7 +49,7 @@ function Register(props) {
           placeholder="Email..."
           name="email"
           value={values.email}
-          
+          className="temp-input"
           onChange={onChange}
         />
         <input
@@ -57,7 +57,7 @@ function Register(props) {
           placeholder="Password..."
           name="password"
           value={values.password}
-          
+          className="temp-input"
           onChange={onChange}
         />
         <input
@@ -65,10 +65,10 @@ function Register(props) {
           placeholder="Confirm Password..."
           name="confirmPassword"
           value={values.confirmPassword}
-          
+          className="temp-input"
           onChange={onChange}
         />
-        <button type="submit">Register</button>
+        <button className="temp-input" type="submit">Register</button>
       </form>
       {Object.keys(errors).length > 0 && (
         <div>
@@ -80,7 +80,7 @@ function Register(props) {
         </div>
       )}
       <Link to="/noprofile">
-        <div style={{ color: "white" }}>back</div>
+        <div style={{  fontSize:"larger",color: "white" }}>back</div>
       </Link>
     </div>
   );

@@ -39,18 +39,19 @@ function Login(props) {
           placeholder="Username..."
           name="username"
           value={values.username}
-          
+          className="temp-input"
           onChange={onChange}
         />
         <input
           label="Password"
           placeholder="Password..."
+          className="temp-input"
           name="password"
           value={values.password}
          
           onChange={onChange}
         />
-        <button type="submit">Login</button>
+        <button className="temp-input" type="submit">Login</button>
       </form>
       {Object.keys(errors).length > 0 && (
         <div>
@@ -62,7 +63,7 @@ function Login(props) {
         </div>
       )}
       <Link to="/noprofile">
-        <div style={{ color: "white" }}>back</div>
+        <div style={{   fontSize:"larger", color: "white" }}>back</div>
       </Link>
     </div>
   );

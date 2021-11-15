@@ -1,4 +1,4 @@
-//redirects these pages to homepage if already logged in
+//redirects these pages to homepage if **NOT** logged in
 import React, {useContext} from 'react'
 import {Route, Redirect} from 'react-router-dom'
 
@@ -11,7 +11,7 @@ function AuthRoute({component: Component, ...rest}){
     
         <Route  
             {...rest}
-            render = {props =>user ? <Redirect to="/"/> : <Component {...props}/>}
+            render = {props =>user ? <Component {...props} />: <Redirect to="/"/>}
         />
         
     )
