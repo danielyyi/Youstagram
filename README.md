@@ -1,5 +1,5 @@
 # Youstagram
-## CURRENTLY IN DEVELOPMENT
+## **CURRENTLY IN DEVELOPMENT**
 
 Youstagram is a mock Instagram (as the name suggests) and is designed to give the user more customization over their posts and profiles. Users will be able to add colors to areas surrounding their pictures, as well as change the outer border shape of their posts. They will also be able to customize the colors, fonts, and shapes of their profile page. 
 
