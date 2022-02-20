@@ -7,6 +7,12 @@ import { faComments } from "@fortawesome/free-solid-svg-icons";
 
 
 function Post({ post: { caption, imagePath, createdAt, id, username, commentCount } }) {
+  moment.updateLocale('en', {
+    relativeTime : {
+        s  : '1 second',
+    }
+  });
+  moment.relativeTimeThreshold('ss', 0);
   return (
     <div>
 
