@@ -19,7 +19,8 @@ module.exports = gql`
   type Post {
     id: ID!
     caption: String!
-    imagePath: String!
+    image: String!
+    color: String
     createdAt: String!
     username: String!
     comments: [Comment]!
@@ -45,7 +46,7 @@ module.exports = gql`
   type Mutation{
       register(registerInput: RegisterInput): User! 
       login(username: String!, password:String!): User!
-      createPost(caption: String!, imagePath: String!): Post!
+      createPost(caption: String!, image: String!, color: String): Post!
       deletePost(postId: ID!): String!
       createComment(postId: ID!, body: String!): Post!
       deleteComment(postId: ID!, commentId: ID!): Post!

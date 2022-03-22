@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 
 
-function Post({ post: { caption, imagePath, createdAt, id, username, commentCount } }) {
+function Post({ post: { caption, image, color, createdAt, id, username, commentCount } }) {
   moment.updateLocale('en', {
     relativeTime : {
         s  : '1 second',
@@ -20,9 +20,9 @@ function Post({ post: { caption, imagePath, createdAt, id, username, commentCoun
       <Link to="/profile">
         <div className="post-user">{username}</div>
       </Link>
-      <div className="post">
+      <div className="post" style = {{backgroundColor: `${color}`}}>
         <div style={{ display: "flex", justifyContent: "center", paddingTop: 10 }}>
-          <img className="post-image" src={imagePath} alt={"post"} />
+          <img className="post-image" src={image} alt={"post"} />
         </div>
           <div className="post-caption">{caption}</div>
       </div>

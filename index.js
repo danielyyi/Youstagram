@@ -1,35 +1,27 @@
-const { ApolloServer } = require("apollo-server-express");
-const express = require('express')
-const mongoose = require("mongoose");
+const { ApolloServer} = require('apollo-server');
+const mongoose = require('mongoose');
 
-const resolvers = require('./graphql/resolvers')
-const typeDefs = require('./graphql/typeDefs')
-const { MONGODB } = require("./config.js");
-const Post = require("./models/Post");
-const cors = require('cors')
+const typeDefs = require('./graphql/typeDefs');
+const resolvers = require('./graphql/resolvers');
+const { MONGODB } = require('./config.js');
+
+const PORT = process.env.port || 5000;
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({req}) => ({req})
+  context: ({ req }) => ({ req })
 });
-const app = express()
 
-startServer();
-
-async function startServer(){
-  await server.start()
-  server.applyMiddleware({app})
-  app.use(express.static('public'))
-  app.use(cors())
-
-  mongoose
-    .connect(MONGODB, { useNewUrlParser: true })
-    .then(() => {
-      console.log("MongoDB Connected");
-      return app.listen({ port: 5000 }, ()=>{
-        console.log('Server ready at locahost:5000/graphql')
-      });
-    })
-  }
-  
+mongoose
+  .connect(MONGODB, { useNewUrlParser: true })
+  .then(() => {
+    console.log('MongoDB Connected');
+    return server.listen({ port: PORT });
+  })
+  .then((res) => {
+    console.log(`Server running at ${res.url}`);
+  })
+  .catch(err => {
+    console.error(err)
+  })

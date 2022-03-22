@@ -4,21 +4,24 @@ import Navbar from "../components/Navbar";
 
 function NoProfile() {
   return (
-    <div>
-      <div>
+    <>
+    <div >
+      <div className="post-form-holder">
         <h3>You're not logged in...</h3>
         <Link to="/login">
           <button className="login">Login</button>
         </Link>
       </div>
-      <div>
+      <div className="post-form-holder">
         <div>Don't have an account?</div>
         <Link to="/register">
           <button className="login">Sign Up</button>
         </Link>
       </div>
+      </div>
       <Navbar />
-    </div>
+    
+    </>
   );
 }
 export default NoProfile;

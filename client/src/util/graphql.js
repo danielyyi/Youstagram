@@ -4,7 +4,8 @@ export const FETCH_POSTS_QUERY = gql`
     getPosts {
       id
       caption
-      imagePath
+      image
+      color
       createdAt
       username
       commentCount
