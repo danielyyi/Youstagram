@@ -3,13 +3,11 @@ import {CirclePicker} from "react-color";
 import { AuthContext } from "../context/auth";
 import MockPost from "../components/MockPost";
 import { Link } from "react-router-dom";
-import astro from "../astro.jpg";
 import gql from "graphql-tag";
 import { useMutation, useQuery } from "@apollo/client";
 import { useForm } from "../util/hooks";
 import {FETCH_POSTS_QUERY} from '../util/graphql'
 import FileBase from 'react-file-base64'
-import Twitter from "react-color/lib/components/twitter/Twitter";
 
 const pickerStyles = {
   default: {
