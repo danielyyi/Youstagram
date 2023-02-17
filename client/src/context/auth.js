@@ -24,6 +24,7 @@ const AuthContext = createContext({
 function authReducer(state, action){
     switch(action.type){
         case 'LOGIN':
+            console.log(localStorage.getItem('jwtToken'))
             return{
                 ...state,
                 user: action.payload

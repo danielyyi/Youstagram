@@ -34,8 +34,29 @@ module.exports = {
             } catch(error){
                 throw new Error(error)
             }
-        }
+        },
+        async searchUser(_,{username}){
+            try{
+                const user = await User.findOne({username: username})
+                if(user){
+                    return user
+                }else{
+                    throw new Error ('User not found')
+                }
+            } catch(error){
+                throw new Error(error)
+            }
+        },
+        async getUsers() {
+            try {
+              const users = await User.find().sort({username:1});
+              return users;
+            } catch (error) {
+              throw new Error(error);
+            }
+          },
     },
+    
     Mutation:{
         async editBio(_, {bio}, context){
             const user = checkAuth(context)

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import {ChromePicker} from "react-color";
+import {CirclePicker} from "react-color";
 import { AuthContext } from "../context/auth";
 import MockPost from "../components/MockPost";
 import { Link } from "react-router-dom";
@@ -9,7 +9,15 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useForm } from "../util/hooks";
 import {FETCH_POSTS_QUERY} from '../util/graphql'
 import FileBase from 'react-file-base64'
+import Twitter from "react-color/lib/components/twitter/Twitter";
 
+const pickerStyles = {
+  default: {
+    picker: { // See the individual picker source for which keys to use
+      width: '200px',
+    },
+  },
+}
 
 function MakePost(props) {
   const { user, logout } = useContext(AuthContext);
@@ -60,31 +68,37 @@ function MakePost(props) {
   
   return (
     <div>
+      <div style={{textAlign: 'center', fontSize: '3vh', paddingTop: '2vh'}}>Create a post</div>
       <form onSubmit={onSubmit}>
         <div className="post-form-holder">
-          <div>
-            <input
-              type="text"
-              onChange={onChange}
-              value = {values.caption}
-              className = "temp-input"
-              name="caption"
-              placeholder="Caption..."
-            />
-          </div>
-          <div>
+          <div >
             <FileBase
             type = "file"
             multiple={false}
             onDone = {({base64}) => changeImage(base64)}
             />
           </div>
-          <div>
-            <ChromePicker color = {color} onChange={({hex}) => changeColor(hex)}/>
-          </div>
           <div className="mock-post-holder">
-          <MockPost c={values.caption} i={image} color = {color}/>
+          <MockPost i={image} color = {color}/>
+          <div>
+            <input
+            wrap="soft"
+              type="text"
+              onChange={onChange}
+              value = {values.caption}
+              className = "post-caption"
+              style={{color: 'black'}}
+              name="caption"
+              placeholder="Caption..."
+            />
+          </div>
         </div>
+
+        
+          <div>
+            <CirclePicker  styles = {pickerStyles} color = {color} onChange={({hex}) => changeColor(hex)}/>
+          </div>
+
         <Link to="/profile">
           <button className="create-button">Cancel</button>
         </Link>

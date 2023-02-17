@@ -20,7 +20,7 @@ function Home() {
       <div className="fake-headerbar"></div>
       <div className="current-posts">
       {loading ? (
-        <h3>Loading...</h3>
+        <div className="loader-holder"><div className="loader"></div></div>
       ) : (
         posts &&
         posts.map((post) => (

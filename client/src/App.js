@@ -12,13 +12,16 @@ import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import NoProfile from "./pages/NoProfile";
 import CreatePost from "./pages/CreatePost";
-
+import SinglePost from './pages/SinglePost';
+import SingleUser from './pages/SingleUser';
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Route exact path="/search" component={Search} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/posts/:postId" component={SinglePost}/>
+        <Route exact path="/users/:username" component={SingleUser}/>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/noprofile" component={NoProfile} />

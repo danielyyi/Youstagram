@@ -18,7 +18,7 @@ function Login(props) {
     update(_, {data: {login: userData}}) {
       console.log(userData);
       context.login(userData)
-      props.history.push("/");
+      props.history.push("/profile");
     },
     onError(err) {
       setErrors(err.graphQLErrors[0].extensions.errors);

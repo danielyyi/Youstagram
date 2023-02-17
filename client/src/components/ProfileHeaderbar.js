@@ -27,7 +27,9 @@ function ProfileHeaderbar() {
         </Link>
         <div className="header-right">
           <button className="edit-profile-button">Edit Profile</button>
-          <button className="dots-button">···</button>
+          <Link to="/">
+          <button className="dots-button" onClick={logout}>Logout</button>
+          </Link>
         </div>
       </div>
     </div>
